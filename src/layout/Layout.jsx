@@ -6,7 +6,14 @@ import Footer from '../Pages/Footer';
 const Layout = () => {
     return (
         <div>
-           
+           <div className='container mx-auto mt-5'>
+           <Navbar></Navbar>
+       
+           </div>
+            <div className='min-h-screen mt-10'>
+                <Outlet></Outlet>
+            </div>
+            <Footer></Footer>
         </div>
     );
 };
