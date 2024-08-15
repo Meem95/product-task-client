@@ -2,7 +2,7 @@ import React from 'react';
 
 const SignUp = () => {
     
-    newuser(a,b)
+    //newuser(a,b)
     return (
         <div>
             signup
