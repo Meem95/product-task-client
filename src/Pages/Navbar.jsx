@@ -57,7 +57,7 @@ const Nav = () => {
         </NavbarItem> */}
       </NavbarContent>
       <NavbarContent justify="end">
-      <NavbarItem className="font-bold to-blue-950">
+      <NavbarItem className="font-bold to-[#D9AF47">
          
          <Link href="/">Home</Link>
      </NavbarItem>

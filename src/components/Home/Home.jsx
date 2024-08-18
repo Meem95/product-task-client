@@ -14,7 +14,7 @@ const Home = () => {
   const [productsPerPage] = useState(9);
 
   useEffect(() => {
-    fetch('http://localhost:5000/products')
+    fetch('https://job-task-scic-server-ochre.vercel.app/products')
       .then(res => res.json())
       .then(data => {
         setProducts(data);
