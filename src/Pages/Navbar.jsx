@@ -1,76 +1,85 @@
 import React from "react";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
-  Link,
-  Button,
-} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button} from "@nextui-org/react";
+import { NavLink } from "react-router-dom";
 
-const Nav = () => {
+
+export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    "Home",
+    "Products",
+    "Contact",
+    "Login",
   ];
-  return <div>
-    <Navbar onMenuOpenChange={setIsMenuOpen} className=" shadow-xl p-3">
-      <NavbarContent >
+
+  return (
+    <Navbar onMenuOpenChange={setIsMenuOpen}  className=" max-w-full h-20  sticky top-0 z-10 backdrop-blur-xl bg-gray-100">
+      <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand>
-          {/* <p className="font-bold text-inherit">ACME</p> */}
-          <img className="h-20 w-20" src="https://i.ibb.co/tHR5Xps/logo.webp" alt="" />
+        <img className="h-20 w-20" src="https://i.ibb.co/tHR5Xps/logo.webp" alt="" />
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        {/* <NavbarItem>
+        <NavbarItem>
           <Link color="foreground" href="#">
-            Features
+            Home
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
-          </Link>
+        <NavbarItem >
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? " font-bold  text-[#D9AF47]"
+              : ""
+          }
+        >
+          Products
+        </NavLink>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="#">
-            Integrations
+            Contact
           </Link>
-        </NavbarItem> */}
+        </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-      <NavbarItem className="font-bold to-[#D9AF47">
-         
-         <Link href="/">Home</Link>
-     </NavbarItem>
-        <NavbarItem className="hidden lg:flex font-bold to-blue-950">
-          <Link href="login">Login</Link>
+        <NavbarItem className="hidden lg:flex">
+        <Button as={Link}  href="#" variant="flat">
+        <NavLink
+          to="/login"
+          className={({ isActive }) =>
+            isActive
+              ? "font-bold  text-[#D9AF47]"
+              : "font-bold "
+          }
+        >
+          Login
+        </NavLink>
+        </Button>
         </NavbarItem>
-        <NavbarItem className="font-bold to-blue-950">
-         
-            <Link href="signup">SignUp</Link>
+        <NavbarItem>
+          <Button as={Link}  href="#" variant="flat">
+          <NavLink
+          to="/signup"
+          className={({ isActive }) =>
+            isActive
+              ? "font-bold  text-[#D9AF47]"
+              : "font-bold "
+          }
+        >
+          SignUp
+        </NavLink>
+          </Button>
         </NavbarItem>
-        
       </NavbarContent>
-      {/* <NavbarMenu>
+      <NavbarMenu className="mt-4">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
@@ -85,9 +94,7 @@ const Nav = () => {
             </Link>
           </NavbarMenuItem>
         ))}
-      </NavbarMenu> */}
+      </NavbarMenu>
     </Navbar>
-  </div>;
-};
-
-export default Nav;
+  );
+}

@@ -50,7 +50,7 @@ const Login = () => {
               className="w-full px-4 py-3 rounded-md border-gray-700 bg-white text-black focus:border-violet-400"
             />
           </div>
-          <button className="block w-full p-3 text-center rounded-sm text-white text-lg bg-lime-600">
+          <button className="block w-full p-3 text-center rounded-sm text-white text-lg bg-[#D9AF47]">
             Login
           </button>
         </form>
@@ -74,7 +74,7 @@ const Login = () => {
         </div>
         <p className="text-xs text-center sm:px-6 text-black">
           Do not have an account?
-          <Link to="/register">
+          <Link to="/signup">
             <a
               rel="noopener noreferrer"
               href="#"

@@ -5,12 +5,12 @@ import Footer from '../Pages/Footer';
 
 const Layout = () => {
     return (
-        <div>
+        <div >
            <div className='container mx-auto'>
            <Navbar></Navbar>
        
            </div>
-            <div className='min-h-screen mt-10 p-4'>
+            <div className='min-h-[calc(100vh-350px)] '>
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>
