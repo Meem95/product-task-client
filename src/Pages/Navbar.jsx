@@ -35,7 +35,7 @@ const Nav = () => {
         />
         <NavbarBrand>
           {/* <p className="font-bold text-inherit">ACME</p> */}
-          <img className="  h-20 w-20" src="https://i.ibb.co/SxFgwDY/360-F-247480017-ST4hot-ATsrc-Er-Aja0-Vzd-Usrr-VBMIc-E4u.jpg" alt="" />
+          <img className="h-20 w-20" src="https://i.ibb.co/tHR5Xps/logo.webp" alt="" />
         </NavbarBrand>
       </NavbarContent>
 
