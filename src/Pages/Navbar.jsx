@@ -16,12 +16,15 @@ export default function App() {
   return (
     <Navbar onMenuOpenChange={setIsMenuOpen}  className=" max-w-full h-20  sticky top-0 z-10 backdrop-blur-xl bg-gray-100">
       <NavbarContent>
-        <NavbarMenuToggle
+        {/* <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
-        />
+        /> */}
         <NavbarBrand>
-        <img className="h-20 w-20" src="https://i.ibb.co/tHR5Xps/logo.webp" alt="" />
+          <NavLink to='/'>
+          <img className="h-20 w-20" src="https://i.ibb.co/tHR5Xps/logo.webp" alt="" />
+          </NavLink>
+       
         </NavbarBrand>
       </NavbarContent>
 
@@ -36,8 +39,8 @@ export default function App() {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? " font-bold  text-[#D9AF47]"
-              : ""
+              ? "sm:block font-bold  text-[#D9AF47]"
+              : "sm:block"
           }
         >
           Products
@@ -50,8 +53,8 @@ export default function App() {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-        <Button as={Link}  href="#" variant="flat">
+        <NavbarItem className=" lg:flex">
+        <Button as={Link}   variant="flat">
         <NavLink
           to="/login"
           className={({ isActive }) =>
@@ -65,7 +68,7 @@ export default function App() {
         </Button>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link}  href="#" variant="flat">
+          <Button as={Link}  variant="flat">
           <NavLink
           to="/signup"
           className={({ isActive }) =>
@@ -79,7 +82,7 @@ export default function App() {
           </Button>
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu className="mt-4">
+      {/* <NavbarMenu className="mt-4">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
@@ -94,7 +97,7 @@ export default function App() {
             </Link>
           </NavbarMenuItem>
         ))}
-      </NavbarMenu>
+      </NavbarMenu> */}
     </Navbar>
   );
 }

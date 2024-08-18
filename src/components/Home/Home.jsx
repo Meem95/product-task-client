@@ -83,7 +83,7 @@ const Home = () => {
           textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
         }}
       >
-        All delicias Food
+        All Delicias Food
       </h1>
       <div className="mb-4 mx-auto text-center">
         <input
@@ -94,7 +94,7 @@ const Home = () => {
           className="border rounded p-2 w-full md:w-1/2   mb-2 md:mb-0 "
         />
       </div>
-      <div className="mb-4 flex flex-wrap gap-2 md:gap-4">
+      <div className="mb-4 flex flex-wrap gap-2 md:gap-6">
         <div className="mx-auto ">
           <select
             value={selectedCategory}
