@@ -1,29 +1,44 @@
-import React from "react";
-import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
+import React, { useEffect, useState } from "react";
+
 const Home = () => {
+  const [product, setProduct] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/products')
+      .then(res => res.json())
+      .then(data => {
+        setProduct(data);
+        setLoading(false);
+      });
+  }, []);
+
   return (
-    <div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
-        <Card className="py-4">
-          <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-            
-            <h4 className="font-bold text-large">Frontend Radio</h4>
-          </CardHeader>
-          <CardBody className="overflow-visible py-2">
-            <img
-              alt="Card background"
-              className="object-cover rounded-xl"
-              src="https://nextui.org/images/hero-card-complete.jpeg"
-              
-            />
-            <div className="flex gap-6"><p className="font-bold">Price: $250</p> 
-            <p className="">Category: Baal</p> 
+    <div className="container mx-auto">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          product.map(item => (
+            <div key={item._id} className="max-w-sm rounded overflow-hidden shadow-lg">
+              <img
+                className="w-full h-48 object-cover"
+                src={item.product_image}
+                alt={item.product_name}
+              />
+              <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2">{item.product_name}</div>
+                <p className="text-gray-700 text-base">Brand: {item.brand_name}</p>
+                <p className="text-gray-700 text-base">Price: ${item.price}</p>
+                <p className="text-gray-700 text-base">Category: {item.category}</p>
+                <p className="text-gray-700 text-base mt-2">{item.description}</p>
+              </div>
+              <div className="px-6 pt-4 pb-2">
+                <p className="text-gray-600 text-sm">Created: {new Date(item.creation_date).toLocaleDateString()}</p>
+              </div>
             </div>
-            
-            <p className="">Description: $Baal er product</p> 
-            <p className="">Created time: 08/14/2024</p> 
-          </CardBody>
-        </Card> 
+          ))
+        )}
       </div>
     </div>
   );

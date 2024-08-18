@@ -27,15 +27,15 @@ const Nav = () => {
     "Log Out",
   ];
   return <div>
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
-      <NavbarContent>
+    <Navbar onMenuOpenChange={setIsMenuOpen} className=" shadow-xl p-3">
+      <NavbarContent >
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand>
           {/* <p className="font-bold text-inherit">ACME</p> */}
-          <img className=" lg:w-[50%]" src="https://i.ibb.co/yRs6xRr/6898.jpg" alt="" />
+          <img className="  h-20 w-20" src="https://i.ibb.co/SxFgwDY/360-F-247480017-ST4hot-ATsrc-Er-Aja0-Vzd-Usrr-VBMIc-E4u.jpg" alt="" />
         </NavbarBrand>
       </NavbarContent>
 
@@ -57,17 +57,18 @@ const Nav = () => {
         </NavbarItem> */}
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="login">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-         
-            <Link href="signup">SignUp</Link>
-        </NavbarItem>
-        <NavbarItem>
+      <NavbarItem className="font-bold to-blue-950">
          
          <Link href="/">Home</Link>
      </NavbarItem>
+        <NavbarItem className="hidden lg:flex font-bold to-blue-950">
+          <Link href="login">Login</Link>
+        </NavbarItem>
+        <NavbarItem className="font-bold to-blue-950">
+         
+            <Link href="signup">SignUp</Link>
+        </NavbarItem>
+        
       </NavbarContent>
       {/* <NavbarMenu>
         {menuItems.map((item, index) => (
